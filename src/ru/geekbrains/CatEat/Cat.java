@@ -11,11 +11,16 @@ public class Cat {
     }
 
     public void eat(Plate Plate) {
-        if (Plate.isDecreaseFood(appetite)){
+        if (Plate.isEnough(appetite) && !isSatiety){
             isSatiety = true;
             System.out.println("Коту " + name + " требуется " + appetite + " еды. Он поел и наелся");
-        } else {
-            System.out.println("Коту " + name + " требуется " + appetite + "еды. Ему не хватает");
+            Plate.isDecreaseFood(appetite);
+        }else if (isSatiety)
+        {
+            System.out.println("Кот " + name + " уже наелся");
+        }
+        else {
+            System.out.println("Коту " + name + " требуется " + appetite + " еды. Ему не хватает");
         }
 
     }

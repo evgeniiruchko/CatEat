@@ -12,13 +12,18 @@ public class Main {
         Cat[] catArray = {catFelix,catTom,catGav};
 
         Plate.info();
-        Plate.addEat(4);
-        Plate.info();
 
         for (int i = 0; i < catArray.length; i++)
         {
             catArray[i].eat(Plate);
             Plate.info();
         }
+        Plate.addEat(6);
+        for (int i = 0; i < catArray.length; i++)
+        {
+            catArray[i].eat(Plate);
+            Plate.info();
+        }
+
     }
 }

@@ -9,18 +9,20 @@ public class Plate {
         System.out.println("в тарелке " + food + " еды");
     }
 
-    public boolean isDecreaseFood(int count) {
-        if (food - count >= 0) {
-            food -= count;
+    public boolean isEnough( int appetite){
+        if (food - appetite >= 0){
             return true;
-        } else {
-            return false;
         }
+        return false;
+    }
+
+    public void isDecreaseFood(int count) {
+            food -= count;
     }
 
     public void addEat(int count){
         food += count;
-        System.out.println("Добавлено " + count + " еды");
+        System.out.println("Добавлено " + count + " еды. Теперь в тарелке " + food + " еды");
     }
 
 
